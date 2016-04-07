@@ -8,16 +8,16 @@
 typedef enum {true, false} bool;
 
 int main(int argc, char *argv[]) {
-	int count;
-	int num=100;
+	unsigned long count;
+	unsigned long num=100;
 	
 	if(argc>1)
 	{
 		num=0;
-		int len = strlen(argv[1]);
+		unsigned long len = strlen(argv[1]);
 	
 		//convert number passed in argument from string to integer
-		int i;
+		unsigned long i;
 		for(i=0;i<len;i++)
 		{
 			num=num*10+(argv[1][i]-'0');
@@ -29,22 +29,22 @@ int main(int argc, char *argv[]) {
 	
 	return 0;
 }
-bool IsPrime(int num)
+bool IsPrime(unsigned long num)
 {
 		if(num<=3)
 			return true;
 		
-		int i;
+		unsigned long i;
 		for(i=2;i*i<=num;i++)
 			if(num%i==0)
 				return false;
 		return true;
 }
-int Count(int max)
+int Count(unsigned long max)
 {
-	int c=0;
+	unsigned long c=0;
 	
-	int i;
+	unsigned long i;
 	for(i=2;i<=max;i++)
 		if(IsPrime(i)==true)
 			c=c+1;
